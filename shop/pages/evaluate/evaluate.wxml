@@ -1,0 +1,25 @@
+<view class='clothes' wx:for="{{evaluateList}}" wx:key="index" data-index="{{index}}">
+    <block wx:for="{{item}}" wx:key="index">
+      <view wx:for="{{item.clothesOrder}}" wx:key="index">
+        <image  src='{{item.imgSrc}}' style='width:200rpx;' mode='widthFix'></image>
+        <view>
+            <view>{{item.title}}</view>  
+            <view>{{item.price}}</view>
+            <view>{{item.size}}码</view>
+            <view>{{item.color}}</view>
+        </view>
+      </view>
+    </block>
+</view>
+<view class="l-evalbox row">
+  <text class="l-evaltxt">满意度：</text>
+  <view class="l-evalist flex-1" bindtap="chooseicon">
+    <icon class="{{tabArr.curHdIndex >'0'? 'cur icon' : 'icon'}}" data-id="1"></icon>
+    <icon class="{{tabArr.curHdIndex >'1'? 'cur icon' : 'icon'}}" data-id="2"></icon>
+    <icon class="{{tabArr.curHdIndex >'2'? 'cur icon' : 'icon'}}" data-id="3"></icon>
+    <icon class="{{tabArr.curHdIndex >'3'? 'cur icon' : 'icon'}}" data-id="4"></icon>
+    <icon class="{{tabArr.curHdIndex >'4'? 'cur icon' : 'icon'}}" data-id="5"></icon>
+  </view>
+</view>
+
+

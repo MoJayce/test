@@ -1,0 +1,146 @@
+page {
+  font-size: 30rpx;
+  background: #efefef;
+}
+
+.tab {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.tab>view {
+  width: 20%;
+  line-height: 100rpx;
+  text-align: center;
+    position: relative
+}
+
+.show {
+  color: #a31704;
+  border-bottom: 2px solid #a31704;
+}
+
+.show1 {
+  margin-top: 120rpx;
+  color: #000;
+  /* border-bottom: 1rpx solid #ccc; */
+}
+
+.hide1 {
+  display: none;
+}
+
+/* 待付款 */
+
+.list {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 2%;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+
+.address {
+  width: 96%;
+  padding: 2%;
+  height: 110rpx;
+  line-height: 50rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+
+.address>view {
+  font-size: 28rpx;
+}
+
+.clothes {
+  width: 100%;
+  height: 260rpx;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+
+.clothes>image {
+  width: 200rpx;
+  float: left;
+  margin-right: 4%;
+}
+
+.clothes>view:nth-of-type(1) {
+  width: 100%;
+  margin-top: 2%;
+  font-size: 30rpx;
+  line-height: 45rpx;
+}
+
+.clothes>view:nth-of-type(2) {
+  width: 100%;
+  font-size: 28rpx;
+  line-height: 70rpx;
+  color: #aaa;
+ 
+}
+
+.delete {
+  width: 94%;
+  height: 80rpx;
+  margin: 3%;
+  box-sizing: border-box;
+}
+
+.delete>view {
+  width: 48%;
+  height: 80rpx;
+  line-height: 80rpx;
+  float: left;
+  font-size: 32rpx;
+}
+
+.delete>button {
+  font-size: 24rpx;
+}
+
+.delete>button:nth-of-type(1) {
+  width: 25%;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: block;
+  float: left;
+}
+
+.delete>button:nth-of-type(2) {
+  width: 25%;
+  line-height: 80rpx;
+  height: 80rpx;
+  float: right;
+}
+.has{
+  display: none;
+}
+.zan_count {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  height: 1.6em;
+  min-width: 1.6em;
+  line-height: 1.6;
+  padding: 0 .4em;
+  font-size: 10px;
+  font-family: tahoma;
+  border-radius: .8em;
+  background: #FF4444;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  transform: translateX(50%);
+  transform-origin: -10% center;
+  z-index: 10;
+  box-shadow: 0 0 0 1px #fff;
+  box-sizing: border-box;
+}

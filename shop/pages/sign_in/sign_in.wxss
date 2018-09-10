@@ -1,0 +1,129 @@
+page{
+  font-size: 30rpx;
+  background: #e7e7e7;
+}
+.sign{
+  width:100%;
+  height: 460rpx;
+  position: relative;
+  top: 0%;
+  left: 0%;
+}
+.sign>view:nth-of-type(1){
+  position: absolute;
+  top: 4%;
+  left: 2%;
+  color: #fff;
+}
+.qiandao{
+  display: none
+}
+.four{
+  color: #fff;
+  position: absolute;
+  bottom:50rpx;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.btn{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 100%;
+  background: #fff;
+  text-align: center;
+}
+.btn>view{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 200rpx;
+  height: 200rpx;
+  font-size: 38rpx;
+  color: #1196db;
+  border-radius: 100%;
+  border: 1px solid #1296db
+}
+.btn>view>view:nth-of-type(1){
+  margin: 25% auto 0 auto;
+  width: 80%;
+   line-height: 70rpx; 
+  font-weight: bold;
+  border-bottom: 1rpx solid #ccc;
+}
+.btn>view>view:nth-of-type(2){
+  font-size: 26rpx;
+  line-height:50rpx;
+}
+.waiquan{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 280rpx;
+  height: 280rpx;
+  border-radius: 100%;
+  background: #fff;
+  opacity: 0.1;
+}
+.xiaofei{
+  width: 100%；
+}
+.show{
+  display: block
+}
+.hide{
+  display: none
+}
+.tab1,.tab2{
+  color: #f44;
+  border-bottom:1px solid #f44; 
+}
+.tab{
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+  margin: 20rpx auto;
+  border-bottom: 1rpx solid #ccc;
+}
+.tab>view{
+  float: left;
+  width: 50%;
+  text-align: center;
+  line-height: 80rpx;
+}
+.jifen{
+  width: 100%;
+  height: 600rpx;
+  background: #fff;
+
+}
+.gets{
+  width: 100%;
+  height: 600rpx;
+  background: #fff;
+}
+.item{
+  width: 100%;
+  height: auto;
+  line-height: 60rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #ccc;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 2%;
+  box-sizing: border-box;
+}
+.item>view:nth-of-type(1){
+  flex: 8
+}
+.item>view:nth-of-type(2){
+  flex: 1;
+  line-height: 100rpx;
+  color: #f50;
+}

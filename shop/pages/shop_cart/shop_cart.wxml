@@ -1,0 +1,51 @@
+<view>
+<!-- 无数据 -->
+  <view wx:if='{{nothing}}' class='nothing {{nothing?"":"xianshi"}}'>
+      <image src='../../images/empty_cart.png'></image>
+      <view >去添加点什么吧！</view>
+  </view>
+  <!-- 有数据 -->
+  <view wx:for="{{goodsList}}" wx:key="index" class="goods_detail touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" data-clothes="{{item.clothes}}"bindtouchstart="touchstart" bindtouchmove="touchmove">
+      <view class="content">
+        <!-- wx:if 是否选择显示不同图标 -->
+        <icon wx:if="{{item.select}}" type="success"   color="#bd1903" bindtap="selectList" data-index="{{index}}" />
+        <icon wx:else type="circle" bindtap="selectList"  data-index="{{index}}"/>
+          <image mode="widthFix" class='goods_img' src="{{item.imgSrc}}"></image>
+          <view>
+                <view class='goods_title'>{{item.title}}</view>
+                <view class='goods_size'>["{{item.size}}码"]</view>
+                <view class='goods_color'>["{{item.color}}"]</view>
+                <view class="goods_price">￥{{item.price}}</view>
+          </view>
+          
+      <view>
+          <view class='reduce {{disabled ? "grey":""}}' bindtap="minusCount" data-index="{{index}}">-</view>
+           <input type='number' value='{{item.goodsNums}}' class='goods_Nums' bindinput='listenInput' data-index="{{index}}"></input> 
+          <view class='add {{disableda ? "gray":""}}' bindtap="addCount" data-index="{{index}}" >+</view>
+      </view>
+    
+     </view>
+  <!-- </view> -->
+    <view class="del" catchtap="del" data-index="{{index}}" data-clothes="{{item.clothes}}">删除</view>
+  </view>
+
+<!-- 全选 -->
+<view>
+
+
+</view>
+</view>
+
+<view class='all' wx:for="{{goodsList}}" wx:key="index">
+      <view>
+          <icon wx:if="{{selectAllStatus}}" type="success" color="#bd1903" bindtap="selectAll"/>
+          <icon wx:else type="circle" color="#ccc" bindtap="selectAll"/>
+          <view>全选</view>    
+      </view>
+      <view>
+          总价:￥{{totalPrice}}
+      </view>
+      <view bindtap='toOrder' class='jiesuan {{jiesuan?"jiesuan1":""}}'>
+         结算
+      </view> 
+</view>

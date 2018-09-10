@@ -1,0 +1,52 @@
+<!-- 计时器 -->
+<!-- <view>
+   <view class="voteText countDownTimeText">{{countDownDay}}天</view>
+      <view class="voteText countDownTimeText">{{countDownHour}}时</view>
+      <view class="voteText countDownTimeText">{{countDownMinute}}分</view>
+      <view class="voteText countDownTimeText">{{countDownSecond}}秒</view>
+</view> -->
+
+
+<!-- 从home页面进入显示的内容 -->
+<view class='home_coupon {{homes?"home":""}}'>
+    <!-- home进来的 -->
+    <!-- <image style="display:block;width:100%" mode="widthFix" src='../../images/bc_qdyl.png'></image> -->
+    <view class='coupon_code'>
+        <input type='text' value='{{ma}}' placeholder='请输入礼券码' placeholder-class='phcolor'></input>
+        <view>兑换</view>
+    </view>
+    <!-- 领券 -->
+    <view class='coupons' wx:for="{{couponList}}" wx:key="index">
+        <view>
+            <view> <view style='font-size:38rpx;font-weight:800'>{{item.coupons}}</view> 元</view>
+            <view>
+              <view>超值礼券</view>
+              <view>满{{item.man}}元可用</view>
+            </view>
+            <view>立即领券 </view>
+        </view>
+        <view>领取{{item.date}}天内有效</view>
+    </view>
+
+
+</view>
+
+
+<!-- 从个人信息进入显示的内容 -->
+<view class='info_coupon {{infos?"info":""}}'>
+  <!-- 领券 -->
+    <view class='coupons' wx:for="{{couponList}}" wx:key="index">
+        <view>
+            <view> <view style='font-size:38rpx;font-weight:800'>{{item.coupons}}</view> 元</view>
+            <view>
+              <view>超值礼券</view>
+              <view>满{{item.man}}元可用</view>
+            </view>
+            <view>立即领券</view>
+        </view>
+        <view>领取{{item.date}}天内有效</view>
+    </view>
+    <view class='tocoupon' bindtap='tocoupon'>
+        去领券 >>
+    </view>
+</view>

@@ -1,0 +1,47 @@
+page{
+  font-size: 28rpx;
+
+   background: #f7f7f7; 
+}
+
+.name,.phone,.address_select,.address_edit,.mail{
+  width: 94%;
+  height: 2.8rem;
+  /* padding: 2% 0; */
+  margin: 2% 3%;
+  box-sizing: border-box;
+  line-height: 2.4rem;
+  border-bottom: 1rpx solid #ccc;
+  background: #fff;
+}
+.name>view:nth-of-type(1), 
+.phone>view:nth-of-type(1),
+.address_edit>view:nth-of-type(1),
+.mail>view:nth-of-type(1)
+{
+  float: left;
+  width: 20%;
+}
+.name>view:nth-of-type(2),
+.phone>view:nth-of-type(2), 
+.address_edit>view:nth-of-type(2), 
+.mail>view:nth-of-type(2)
+{
+  float: right;
+  width: 76%;
+  height: 100%;
+}
+.name{
+  margin-top: 0%;
+}
+input{
+  height: 2.4rem
+}
+.btn{
+  margin: 8% auto;
+}
+.btn>button{
+    width: 96%;
+    margin: 3% 2%;
+    box-sizing: border-box;
+}

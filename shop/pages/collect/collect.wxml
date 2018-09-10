@@ -1,0 +1,12 @@
+<view>
+    <view class='collect'>
+        <view wx:for="{{collectLists}}" wx:key="index" class='{{show?"":"show"}}'>
+            <image src="{{item.imgSrc}}" mode="widthFix"></image>
+            <view>
+              <view>{{item.title}}</view>
+              <view class='time'>收藏时间：{{item.collectTime}}</view>
+            </view>
+            <view>查看明细</view>
+        </view>
+    </view>
+</view>

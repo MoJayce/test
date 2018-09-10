@@ -1,0 +1,30 @@
+<view>
+ <!-- <view class='cricle'></view> -->
+  <view class="search-content">
+    <image src="/images/search-pic.png" class="search-icon" />
+    <input placeholder="请输入搜索内容" class="search-input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput' bindconfirm='toSearch' value='{{searchInput}}'>
+    </input>
+    <button class='search-btn' bindtap="toSearch">搜索
+    </button>
+  </view>
+</view>
+<!-- 分类 -->
+<view class='classifys'>
+<!-- 侧边切换栏 -->
+ <view class='tab_left'>
+       <view class="tab_lefts" wx:for="{{tab_left}}" wx:key="id"  id="{{item.id}}" class="{{tab_Lid == item.id ? 'type-item-on' : ''}}" bindtap='tabClick' data-text="{{item.title}}">
+       {{item.name}}
+       </view>
+ </view>
+    <!-- 内容切换区 -->
+    <scroll-view class='tab_right' scroll-y="true" style="width: 100%;overflow: hidden;"mode="widthFix" >
+        <view class='item' style='width:100%;height:100%;'>
+            <view wx:for="{{tab_right}}" wx:key="index" data-text='{{item.title}}' bindtap='goods_lists'>
+                <image src="{{item.src}}" mode="widthFix" ></image>
+                <view>{{item.title}}</view>
+            </view>
+            
+                <view style='width:100%;height:50px'></view>
+        </view>
+    </scroll-view>
+</view>

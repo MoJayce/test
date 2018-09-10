@@ -1,0 +1,192 @@
+.page {
+  width: 100%;
+  background: #efefef;
+  font-size: 28rpx;
+}
+.msk{
+  position: fixed;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+}
+.msk>image{
+    width: 600rpx;
+}
+.msk>view>image{
+  display: block;
+    width: 60rpx;
+    margin: 0 auto;
+}
+.hide{
+  display: none;
+}
+
+.swiper {
+  height: 348px;
+}
+
+.wrap {
+  height: auto;
+  position: relative;
+}
+
+/*用来包裹所有的小圆点  */
+
+.dots {
+  width: 80px;
+  height: 10px;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 50%;
+  bottom: 90px;
+  transform: translateX(-50%);
+}
+
+/*未选中时的小圆点样式 */
+
+.dot {
+  width: 10px;
+  height: 5px;
+  border-radius: 50px;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  background-color: white;
+}
+
+/*选中以后的小圆点样式  */
+
+.active {
+  width: 16px;
+  height: 5px;
+  background-color: coral;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.nav {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 180rpx;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+}
+
+.nav>navigator>view>image {
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  margin: 36rpx auto 10rpx auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.nav>navigator {
+  width: 25%;
+  text-align: center;
+  font-size: 12px;
+  float: left;
+  /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.module1,.module2,.module3 {
+  margin-top: 8px;
+  width: 100%;
+  padding: 1px 12px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.pintuan {
+  text-indent: 0.5em;
+  margin: 10px auto;
+}
+.kanjia {
+  text-indent: 0.5em;
+   padding: 18rpx 0; 
+}
+.pintuan>image,.kanjia>image{
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-right: 5px;
+}
+
+.module2{
+  background: #efefef;
+  padding: 1rpx 12rpx;
+}
+.module2>view{
+  background: white
+}
+.list1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list1>view {
+  width: 50%;
+  text-align: center;
+}
+.list1>view>image{
+  display: block;
+  width: 100%;
+}
+.box{
+  position: relative
+}
+.txt{
+  position: absolute;
+  width: 100%;
+  height: 80rpx;
+  padding: 10rpx 0;
+  background: black;
+   opacity: 0.7; 
+  bottom: 0rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+.module2>.list2{
+    width: 100%;
+    margin: 0 0 16rpx 0;
+   display: flex;
+   background: white;
+  flex-direction:column;
+}
+.module2>.list2>view {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  padding:10rpx;
+
+}
+.module2>.list2>view>view{
+  padding: 10rpx
+}
+.scroll-view_H{
+    white-space: nowrap;
+}
+.scroll-view-item{
+    height: 166px;
+    
+    overflow: hidden;
+}
+.scroll-view-item_H{
+    display: inline-block;
+    width: 90%;
+    height: 166px;
+    overflow: hidden;
+}
+.scroll-view-item_H>image{
+  width: 98%;
+  height: 130%;
+}

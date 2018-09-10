@@ -1,0 +1,192 @@
+page {
+  margin: 0;
+  padding: 0;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.atv{
+  background: orange;
+  color:#fff
+}
+.set{
+  width: 100%;
+  position: absolute;
+  bottom:0%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.set>button{
+  width: 46%;
+  margin: 0 2%; 
+  box-sizing: border-box;
+}
+.hide{
+  display: none;
+}
+#sctr{
+position: fixed;
+width: 100%;
+height: 100%; 
+}
+.select {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.select>view {
+  width: 25%;
+  padding: 12px 20px;
+  text-align: center;
+}
+
+/*向上*/
+
+.arrow_up_red {
+  border-color: transparent transparent #f03939;
+}
+
+.arrow_down_red {
+  border-color: #f03939 transparent transparent;
+}
+
+.arrow_up_gray {
+  border-color: transparent transparent #ccc;
+}
+
+.arrow_down_gray {
+  border-color: #ccc transparent transparent;
+}
+
+.chose{
+  color: #f03939
+}
+.chose1{
+  color: #000
+}
+.arrow_up {
+  width: 0;
+  height: 0;
+  border-width: 0 10rpx 10rpx;
+  border-style: solid;
+  margin: 9rpx 10rpx;
+  position: relative;
+}
+
+/*向下*/
+
+.arrow_down {
+  width: 0;
+  height: 0;
+  border-width: 10rpx 10rpx 0;
+  border-style: solid;
+  /*灰 透明 透明 */
+  margin: 9rpx 10rpx;
+  position: relative;
+}
+
+.icon-filter {
+  font-size: 26rpx;
+  color: #666;
+  margin-left: 5rpx;
+}
+
+.price_tab {
+  position: relative;
+}
+
+.saojiao {
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  transform: translateY(-50%);
+}
+
+.c-state1 {
+  display: block;
+}
+
+.c-state {
+  display: none;
+}
+
+.page-top {
+  width: 600rpx;
+  height:100%;
+  background: #fff;
+  position: absolute;
+  right:0%;
+  top: 0;
+  z-index: 999;
+}
+
+/* 列表样式 */
+
+#goodsLists {
+  display: flex;
+  flex-wrap: wrap;
+  background: #f7f7f7;
+}
+
+.goodsLists {
+  width: 48%;
+  margin: 1%;
+  box-sizing: border-box;
+  background: white;
+  float: left;
+  padding: 10rpx;
+}
+
+.goodsLists>image {
+  width: 100%;
+}
+
+.product_name {
+  color: #1a1a1a;
+  font-size: 30rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  margin: 10rpx;
+  box-sizing: border-box;
+}
+/*  加载更多   */
+.weui-loading {
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-animation: weuiLoading 1s steps(12, end) infinite;
+  animation: weuiLoading 1s steps(12, end) infinite;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=) no-repeat;
+  background-size: 100%;
+}
+.weui-loadmore {
+  width: 65%;
+  margin: 1em auto;
+  line-height: 1.6em;
+  font-size: 14px;
+  text-align: center;
+}
+.weui-loadmore__tips {
+  display: inline-block;
+  vertical-align: middle;
+}
+.wc{
+  width: 100%;
+  height: 100rpx;
+}
+.wc>view{
+  width: 100%;
+  height: 100%;
+  border-bottom: 1rpx solid #ccc;
+  line-height:100rpx;
+  text-align: center;
+}
+.selected_p{
+  background: orange;
+  color: white
+}

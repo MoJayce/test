@@ -1,0 +1,17 @@
+<view>
+<!-- 上面是个横向滑动的专栏 -->
+     <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+            <view class="scroll-view-item_H" wx:for='{{especial}}' wx:key="index">
+              <image src='{{item.src}}' mode="widthFix"></image>
+            </view>
+  </scroll-view>
+</view>
+<view class='list' wx:for='{{list}}' wx:key="index">
+  <view>
+      <image src='{{item.src}}' mode='widthFix'>
+      </image>
+      <!-- <view>
+        <view>{{title}}</view>
+      </view> -->
+  </view>
+</view>

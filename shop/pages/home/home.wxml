@@ -1,0 +1,104 @@
+<!-- <view>
+简介
+<image src="../img/goods/content.jpg" mode="widthFix"></image>
+</view> -->
+<!-- <image src="../img/goods/Play001.jpg"></image> -->
+<!--遮罩层-->
+<mask hidden="{{hidden1}}" style="z-index: 1;" hover-style="none"/> 
+<view class='msk {{hidden1?"hide":""}}' >
+ <image src='../../images/icon_alert.png' mode="widthFix"></image>
+<view bindtap='onChangeShowState'>
+    <image src='../../images/error.png' mode="widthFix"></image>
+</view>
+</view>
+<!-- swiper组件 -->
+<view class='page' mode="widthFix">
+<view class='wrap'>
+    <swiper style='height:400px' circular="true" current="{{currentSwiper}}" bindchange="swiperChange"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{adList}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.picUrl}}" class="slide-image" width="100%" mode="widthFix"/>
+        </swiper-item>
+      </block>
+    </swiper>
+ <!--重置小圆点的样式  -->
+    <view class="dots">  
+        <block wx:for="{{adList}}" wx:key="index">  
+            <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>  
+        </block>  
+    </view>
+    <!-- 导航栏 -->
+    <view class='nav'>
+        <navigator hover-class='none' open-type="navigate" url="/pages/sign_in/sign_in">
+            <view>
+              <image src='../../images/qiandao.png'></image>    
+              签到
+            </view>
+        </navigator>
+        <navigator hover-class='none' open-type="navigate" url="/pages/coupon/coupon?name=home">
+            <view>
+              <image src='../../images/ticket.png'></image> 
+                礼券
+            </view>
+        </navigator> 
+        <navigator hover-class='none' open-type="navigate" bindtap='aaa'>
+            <view>
+              <image src='../../images/bargain.png'></image>
+                砍价
+            </view>
+        </navigator>
+       <navigator hover-class='none' open-type="navigate" url="/pages/column/column?name=column">
+          <view>
+            <image src='../../images/ceiling.png'></image>
+            专栏
+            </view>
+       </navigator>
+    </view>
+</view>
+
+
+<!-- 分栏一 -->
+<view class='module1'>
+    <view class='pintuan' bindtap='hot_sell'>
+        店铺热卖
+      <image src='../../images/go.png'></image>
+    </view>
+    <view class='list1'>
+        <view wx:for="{{pintuan}}" wx:key="index" class='box'>
+            <view class='txt'>
+              <view>{{item.title}}</view>
+              <view>{{item.name}}</view>
+            </view> 
+            <image src="{{item.src}}" mode="widthFix"></image>
+        </view> 
+      
+    </view> 
+</view> 
+<!-- 分栏二 -->
+<view class='module2'>
+      <view class='kanjia' bindtap='season_sell'>
+          应季新款
+      <image src='../../images/go.png'></image>
+    </view>
+    <view class='list2' wx:for="{{kanjia}}" wx:key="index">
+        <view>
+            <image src="{{item.src}}" style='width:100%;' mode="widthFix"></image>
+            <view>品牌：{{item.title}}</view>
+            <view>年份季节：{{item.season}}</view>
+        </view>
+    </view>
+</view> 
+<!-- 分栏三 -->
+<view class='module3'>
+    <view class='pintuan' bindtap='choiceness'>
+      店铺精选
+      <image src='../../images/go.png'></image>
+    </view>
+     <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+            <view class="scroll-view-item_H" wx:for='{{jingxuan}}' wx:key="index">
+              <image src='{{item.src}}' mode="widthFix"></image>
+            </view>
+  </scroll-view>
+</view>
+</view>

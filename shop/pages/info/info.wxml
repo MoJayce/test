@@ -1,0 +1,84 @@
+<view class='user_top'>
+   <!-- <view>
+      <image src='{{userInfo.avatarUrl}}'></image>
+  </view>
+  <view>
+      <view>{{userInfo.nickName}}</view>
+      <view>积分{{}}</view>
+  </view>
+  <button open-type='getUserInfo'>获取用户信息</button>  -->
+<!-- 测试使用 -->
+<view class='user_info'>
+    <view class="headerImg">
+        <open-data class="headerImgs" type="userAvatarUrl"></open-data>
+    </view>
+    <open-data class="userName" type="userNickName" open-gid="xxxxxx"></open-data>
+    <!-- <view class='integral'>积分</view> -->
+</view>
+
+<!-- <open-data type="userGender" lang="zh_CN"></open-data> -->
+</view>
+<!-- 我的订单 -->
+<view class='order'>
+    <view>
+       <view class='order_line' bindtap='toOrder'>
+          <image class='order_img' src='../../images/order.png'></image>
+          <view>我的订单</view>
+          <image class='right_img' src='../../images/right.png'></image>
+       </view>  
+    </view>
+    <view class='orderList'>
+        <view class='obligation' bindtap='obligation'>
+            <image src='../../images/dfk.png'></image>
+            <view>待付款</view>
+            <view class='zan_count {{has1?"":"has"}}'>{{had1}}</view>
+        </view>
+        <view class='obligation' bindtap='deliver'>
+            <image src='../../images/dfh.png'></image>
+            <view>待发货</view>
+            <view class='zan_count {{has2?"":"has"}}'>{{had2}}</view>
+        </view>
+        <view class='obligation' bindtap='recriving'>
+            <image src='../../images/dsh.png'></image>
+            <view>待收货</view>
+            <view class='zan_count {{has3?"":"has"}}'>{{had3}}</view>
+        </view>
+        <view class='obligation' bindtap='evaluate'>
+            <image src='../../images/fhd.png'></image>
+            <view>待评价</view>
+            <view class='zan_count {{has4?"":"has"}}'>{{had4}}</view>
+        </view>
+    </view>
+    <view class='line'></view>
+    <!-- 个人信息 -->
+    <view class='user_infos'>
+        <view style='border-bottom:1rpx solid #efefef;border-right:1rpx solid #efefef; padding: 5% 1% 3% 1%;'>
+             <image src='../../images/balance.png'></image>
+            <view>我的余额</view>
+            <view style='color:#bbb'>0元</view>
+        </view>
+         <view style='border-bottom:1rpx solid #efefef;border-right:1rpx solid #efefef; padding: 5% 1% 3% 1%;'>
+             <image src='../../images/bargain.png'></image>
+            <view>我的砍价</view>
+        </view>
+        <view style='border-bottom:1rpx solid #efefef; padding: 5% 1% 3% 1%;' bindtap='my_coupon'>
+             <image src='../../images/ticket1.png'></image>
+            <view>我的礼券</view>
+        </view>
+        <view style='border-right:1rpx solid #efefef; padding: 4% 1% 7% 1%;' bindtap='my_collect'>
+             <image src='../../images/select.png'></image>
+            <view>我的收藏</view>
+        </view>
+        <view style='border-right:1rpx solid #efefef; padding: 4% 1% 7% 1%;' bindtap='my_address'>
+             <image src='../../images/address.png'></image>
+            <view>我的地址</view>
+        </view>
+        <view style=' padding: 4% 1% 7% 1%;'>
+             <image src='../../images/service.png'></image>
+            <view>联系客服</view>
+        </view>
+    </view>
+    <view class='title'>
+        素洁商城 v1.0
+    </view> 
+</view>

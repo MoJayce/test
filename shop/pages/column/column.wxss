@@ -1,0 +1,29 @@
+.scroll-view_H{
+    white-space: nowrap;
+}
+.scroll-view-item{
+    height: 166px;
+    
+    overflow: hidden;
+}
+.scroll-view-item_H{
+    display: inline-block;
+    width: 25%;
+    overflow: hidden;
+}
+.scroll-view-item_H>image{
+  display: block;
+  width: 130rpx;
+  margin: 0 auto;
+
+}
+
+.list>view{
+  position: relative
+}
+.list>view>image{
+  width: 96%;
+  margin: 4% 2%;
+  box-sizing: border-box;
+}
+

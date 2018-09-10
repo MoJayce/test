@@ -1,0 +1,55 @@
+<view>
+    <image style='width:100%;float:left' mode="widthFix" src="../../images/bc_qdyl.png"></image>
+    <view class='sign'>
+        <view>您的可用积分:{{integrals}}</view>
+        <view class='waiquan'></view>
+        <view class='btn'>
+          <view>
+              <view bindtap='signing'>{{signIn}}</view>
+              <view>连续{{date}}天</view>
+          </view>
+        </view>
+        <view class='four {{qd?"qiandao":""}}'>今日已签到,获得{{integral}}积分</view>
+    </view>
+</view>
+<view>
+
+</view>
+<view class='xiaofei'>
+   <view class='tab'>
+        <view bindtap='tab1' class='{{tab1?"tab1":""}}'>积分规则</view>
+        <view bindtap='tab2' class='{{tab2?"tab2":""}}'>获得记录</view>
+   </view>
+   <scroll-view class='jifen {{jifen?"show":"hide"}}'  scroll-y="true"> 
+      <view style='text-align:center;font-size:40rpx;padding:40rpx 0 25rpx 0;'>素洁服装积分规则</view>
+      <view style='padding-left:20rpx;'>
+         1、签到积分规则
+      </view>
+      <view style='font-size:28rpx;color:#bbb;padding:20rpx;box-sizing:border-box;'>
+          亲,每天签到送积分啦！每天签到一次送10积分，多签多得，积分可以抵消现金的，记得每天签到一次哦。
+      </view>
+      <view style='padding:20rpx;'>
+         2、积分使用规则
+      </view>
+      <view style='font-size:28rpx;color:#bbb;padding:20rpx;box-sizing:border-box;'>
+          亲,签到的积分可以享受满立减，下单更优惠！即满100积分可抵消5元现金；在您下单微信支付界面，系统会自动显示您的总积分可用多少，微信付款之后在商品金额上系统会自动减去5元。
+      </view>
+       <view style='padding:20rpx;'>
+         3、积分使用规则
+      </view>
+      <view style='font-size:28rpx;color:#bbb;padding:20rpx;box-sizing:border-box;'>
+          亲,签到的积分可以享受满立减，下单更优惠！即满100积分可抵消5元现金；在您下单微信支付界面，系统会自动显示您的总积分可用多少，微信付款之后在商品金额上系统会自动减去5元。
+      </view>
+   </scroll-view>
+  <scroll-view class='gets {{gets?"show":"hide"}}' scroll-y="true"> 
+      <view wx:for="{{geting}}" wx:key="index" class='item'>
+          <view>
+              <view>每日签到获得</view> 
+              <view style='font-size:26rpx;'>{{times}}</view>          
+          </view>
+          <view>
+              +{{item.integral}}
+          </view> 
+      </view>
+   </scroll-view>
+</view>

@@ -1,0 +1,203 @@
+<view class='tab'>
+  <view class='{{tab1?"show":"hide"}}' bindtap='tab1'>
+    待付款
+    <view class='zan_count {{has1?"has":""}}'>{{tab1Nums}}</view>
+  </view>
+  <view class='{{tab2?"show":"hide"}}' bindtap='tab2'>
+    待发货
+    <view class='zan_count {{has2?"has":""}}'>{{tab2Nums}}</view>
+  </view>
+  <view class='{{tab3?"show":"hide"}}' bindtap='tab3'>
+    待收货
+    <view class='zan_count {{has3?"has":""}}'>{{tab3Nums}}</view>
+  </view>
+  <view class='{{tab4?"show":"hide"}}' bindtap='tab4'>
+    待评价
+    <view class='zan_count {{has4?"has":""}}'>{{tab4Nums}}</view>
+  </view>
+  <view class='{{tab5?"show":"hide"}}' bindtap='tab5'>
+    已完成
+  </view>
+</view>
+
+<!-- 待付款 -->
+<view class='{{tab1?"show1":"hide1"}}'>
+  <view wx:for="{{orderList}}" wx:key="index" data-index="{{index}}" class='list'>
+    <view data-index="{{index}}">
+      <view wx:for="{{item}}" wx:key="index">
+        <view class='address'>
+          <view>
+            订单号：
+            <text style='color:gray'>{{item.orderId}}</text>
+          </view>
+          <view style='float:left'>
+            提交时间：
+            <text style='color:gray'>{{item.orderTime}}</text>
+          </view>
+          <view style='color:#f00;float:right;font-size:32rpx;'>{{status}}</view>
+        </view>
+        <view class='clothes' wx:for="{{item.clothesOrder}}" wx:key="index">
+          <image src='{{item.imgSrc}}' mode='widthFix'></image>
+          <view>{{item.title}}</view>
+          <view>
+            <view style='float:left'>规格:{{item.size}}</view>
+            <view>{{item.color}}</view>
+          </view>
+          <view>
+            <view style='color:#f30;float:left;font-size:32rpx; font-weight:800;'>
+              ￥{{item.price}}
+            </view>
+            <view style='float:right;'>x{{item.goodsNums}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='delete' data-index="{{index}}">
+        <view>
+          <view style='float:left'>应付款：</view>
+          <block wx:for="{{item}}" wx:key="index">
+            <view style='color:#f00;'>￥{{item.totalPrice}}</view>
+          </block>
+        </view>
+        <button catchtap='delete' data-index="{{index}}">删除订单</button>
+        <button type='warn' data-index="{{index}}" bindtap='payNow'>立即付款</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 待发货 -->
+<view class='{{tab2?"show1":"hide1"}}'>
+  <view wx:for="{{deliverList}}" wx:key="index" data-index="{{index}}" class='list'>
+    <view data-index="{{index}}">
+      <view wx:for="{{item}}" wx:key="index">
+        <view class='address'>
+          <view>
+            订单号：
+            <text style='color:gray'>{{item.orderId}}</text>
+          </view>
+          <view style='float:left'>
+            提交时间：
+            <text style='color:gray'>{{item.orderTime}}</text>
+          </view>
+          <view style='color:#f00;float:right;font-size:32rpx;'>{{status}}</view>
+        </view>
+        <view class='clothes' wx:for="{{item.clothesOrder}}" wx:key="index">
+          <image src='{{item.imgSrc}}' mode='widthFix'></image>
+          <view>{{item.title}}</view>
+          <view>
+            <view style='float:left'>规格:{{item.size}}</view>
+            <view>{{item.color}}</view>
+          </view>
+          <view>
+            <view style='color:#f30;float:left;font-size:32rpx; font-weight:800;'>
+              ￥{{item.price}}
+            </view>
+            <view style='float:right;'>x{{item.goodsNums}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='delete' data-index="{{index}}">
+        <view>
+          <view style='float:left'>合计：</view>
+          <block wx:for="{{item}}" wx:key="index">
+            <view style='color:#f00;'>￥{{item.totalPrice}}</view>
+          </block>
+        </view>
+        <!-- <button catchtap='delete' data-index="{{index}}">取消订单</button> -->
+        <button type='warn' data-index="{{index}}" style='width:50%' bindtap='fahuo'>提醒发货</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 待收货 -->
+<view class='{{tab3?"show1":"hide1"}}'>
+  <view wx:for="{{deliverList}}" wx:key="index" data-index="{{index}}" class='list'>
+    <view data-index="{{index}}">
+      <view wx:for="{{item}}" wx:key="index">
+        <view class='address'>
+          <view>
+            订单号：
+            <text style='color:gray'>{{item.orderId}}</text>
+          </view>
+          <view style='float:left'>
+            提交时间：
+            <text style='color:gray'>{{item.orderTime}}</text>
+          </view>
+          <view style='color:#f00;float:right;font-size:32rpx;'>{{status}}</view>
+        </view>
+        <view class='clothes' wx:for="{{item.clothesOrder}}" wx:key="index">
+          <image src='{{item.imgSrc}}' mode='widthFix'></image>
+          <view>{{item.title}}</view>
+          <view>
+            <view style='float:left'>规格:{{item.size}}</view>
+            <view>{{item.color}}</view>
+          </view>
+          <view>
+            <view style='color:#f30;float:left;font-size:32rpx; font-weight:800;'>
+              ￥{{item.price}}
+            </view>
+            <view style='float:right;'>x{{item.goodsNums}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='delete' data-index="{{index}}">
+        <view>
+          <view style='float:left'>合计：</view>
+          <block wx:for="{{item}}" wx:key="index">
+            <view style='color:#f00;'>￥{{item.totalPrice}}</view>
+          </block>
+        </view>
+        <!-- <button catchtap='delete' data-index="{{index}}">取消订单</button> -->
+        <button type='warn' data-index="{{index}}" style='width:50%' bindtap='fahuo'>查看物流</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 待评价 -->
+<view class='{{tab4?"show1":"hide1"}}'>
+  <view wx:for="{{deliverList}}" wx:key="index" data-index="{{index}}" class='list'>
+    <view data-index="{{index}}">
+      <view wx:for="{{item}}" wx:key="index">
+        <view class='address'>
+          <view>
+            订单号：
+            <text style='color:gray'>{{item.orderId}}</text>
+          </view>
+          <view style='float:left'>
+            提交时间：
+            <text style='color:gray'>{{item.orderTime}}</text>
+          </view>
+          <view style='color:#f00;float:right;font-size:32rpx;'>{{status}}</view>
+        </view>
+        <view class='clothes' wx:for="{{item.clothesOrder}}" wx:key="index">
+          <image src='{{item.imgSrc}}' mode='widthFix'></image>
+          <view>{{item.title}}</view>
+          <view>
+            <view style='float:left'>规格:{{item.size}}</view>
+            <view>{{item.color}}</view>
+          </view>
+          <view>
+            <view style='color:#f30;float:left;font-size:32rpx; font-weight:800;'>
+              ￥{{item.price}}
+            </view>
+            <view style='float:right;'>x{{item.goodsNums}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='delete' data-index="{{index}}">
+        <view>
+          <view style='float:left'>合计：</view>
+          <block wx:for="{{item}}" wx:key="index">
+            <view style='color:#f00;'>￥{{item.totalPrice}}</view>
+          </block>
+        </view>
+        <!-- <button catchtap='delete' data-index="{{index}}">取消订单</button> -->
+        <button type='warn' data-index="{{index}}" style='width:50%' bindtap='evaluate'>评价</button>
+      </view>
+    </view>
+  </view>
+</view>

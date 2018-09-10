@@ -1,0 +1,62 @@
+page{
+  font-size: 28rpx;
+  background: #f7f7f7;
+  border-top:1rpx solid #e6e6e6 
+}
+.edit{
+  position: relative;
+  z-index: 999;
+}
+.address{
+  width: 100%;
+  height: 150rpx;
+  padding:2% 3%;
+  background: #fff;
+  margin-bottom: 2%;
+  box-sizing: border-box;
+}
+.address>view:nth-of-type(1){
+  float: left;
+  width: 90%;
+  overflow: hidden;
+  text-indent: 1em;
+}
+.address>view:nth-of-type(2){
+  width: 10%;
+  float: right
+}
+
+.address>view>image{
+  width:40rpx;
+  height:40rpx;
+   margin:50% auto; 
+
+}
+.address_name{
+  overflow: hidden;
+  line-height: 60rpx;
+}
+.address_detail{
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #ccc;
+  overflow: hidden
+}
+.add_address{
+  width: 96%;
+  position: fixed;
+  bottom: 2%;
+  left: 2%;
+}
+.address_icon{
+  width: 100%;
+  /* height: 200rpx; */
+  margin: 0 auto;
+}
+.address_icon>image{
+  width: 80%;
+  margin: 0 auto;
+}
+.hide{
+  display: none
+}

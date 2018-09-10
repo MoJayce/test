@@ -1,0 +1,79 @@
+<!-- 筛选栏 -->
+<page id='{{scy?"sctr":""}}'>
+<view class='select'>
+    <view bindtap='zonghe' class='{{zonghe == true?"":"chose"}}'>
+      综合
+    </view>
+    <view bindtap='sales_select' class='{{xiaoliang == true?"":"chose"}}'>
+      销量
+    </view>
+    <view class='price_tab {{jiage == true?"":"chose"}}' bindtap='select_price'>
+      价格
+        <view class='saojiao'>
+          <view class="arrow_up {{desc == false ? 'arrow_up_red':'arrow_up_gray'}} "/>
+          <!-- 向下的三角形 -->
+          <view class="arrow_down {{asc == false ? 'arrow_down_red':'arrow_down_gray'}} "/>
+        </view>
+    </view>
+    <view class='select_size {{shaixuan == true?"":"chose1"}}' bindtap="tap_ch">
+      筛选<i class="iconfont icon-filter"/>
+       <!--遮罩层-->
+        <mask hidden="{{open}}" style="z-index: 1;" hover-style="none"/>   
+
+    </view>
+</view>
+  <view class="page-top {{open ? 'c-state' : 'c-state1'}}" mode="widthFix"> 
+    <view class="page-bottom"> 
+    <view class="page-content"> 
+      <view class="wc" wx:for="{{set_price}}" wx:key="index"> 
+        <view data-id="{{item.price}}" class='{{setdid == item.price?"selected_p":""}}' bindtap='setd1'>￥{{item.price}}</view>
+      </view>
+      <view class='set'>
+          <button bindtap='reset' class='resets'>重置</button>
+          <button bindtap='qued' class='atv'>确定</button>
+      </view>
+    </view> 
+  </view> 
+  </view> 
+<!-- 衣服列表 -->
+<scroll-view id='goodsLists' scroll-y="true" style="width: 100%;overflow: hidden;"mode="widthFix">
+ <view class='goodsLists' wx:for="{{goodsLists}}" wx:key="index" id="{{item.id}}" data-type="{{item.clothesId}}" bindtap='toDetail'>
+      <image src="{{item.src}}" mode="widthFix"></image>
+      <view class='product_name'>{{item.title}}</view>
+      <view style='display:flex;padding:10rpx;justify-content:space-between'>
+          <view style='float:left;color:#ff0000;font-size:36rpx;font-weight:800;margin-top:0;'>
+              ￥{{item.price}}
+          </view>
+          <view style='float:left;text-decoration:line-through;color:#666666;font-weight:600;display:flex;align-items:flex-end;'>
+              {{item.oldPrice}}
+          </view>
+          <view style='float:right;font-size:24rpx;color:#666666;display:flex;align-items:flex-end;'>
+              销量{{item.sales}}件
+          </view>
+      </view>
+    </view>
+  <view class="weui-loadmore {{isHideLoadMore?'':'hide'}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+
+</scroll-view>
+<!-- <view class='goodsLists'>
+    <view wx:for="{{goodsLists}}" wx:key="index" id="{{item.id}}" data-type="{{item.type}}">
+      <image src="{{item.src}}" mode="widthFix"></image>
+      <view class='product_name'>{{item.title}}</view>
+      <view style='display:flex;padding:10rpx;justify-content:space-between'>
+          <view style='float:left;color:#ff0000;font-size:36rpx;font-weight:800;margin-top:0;'>
+              {{item.price}}
+          </view>
+          <view style='float:left;text-decoration:line-through;color:#666666;font-weight:600;display:flex;align-items:flex-end;'>
+              {{item.oldPrice}}
+          </view>
+          <view style='float:right;font-size:24rpx;color:#666666;display:flex;align-items:flex-end;'>
+              销量{{item.sales}}件
+          </view>
+      </view>
+    </view>
+</view> -->
+
+</page> 

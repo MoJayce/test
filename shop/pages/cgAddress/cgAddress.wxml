@@ -1,0 +1,42 @@
+<view style='background:#fff'>
+    <view class='name'>
+        <view>联系人</view>
+        <view>
+          <input value='{{user_name}}' bindinput='user_name' placeholder='姓名'></input>
+        </view>
+    </view>
+    <view class='phone'>
+        <view>手机号码</view>
+        <view>
+          <input value='{{user_phone}}' bindinput='user_phone' type='number' maxlength='11' placeholder='11位手机号码'></input>
+        </view>
+    </view>
+    <view class='address_select'>
+      <view>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view class="picker">
+              <view style='width:24%;float:left;color:#000;'>选择地区</view>  {{region[0]}}  {{region[1]}}   {{region[2]}}
+            </view>
+        </picker>
+      </view>
+    </view>
+    <view class='address_edit'>
+        <view>详细地址</view>
+        <view>
+          <input value='{{user_district}}' bindinput='user_district' placeholder='街道门牌信息'></input>
+        </view>
+    </view>
+    <view class='mail'>
+        <view>邮政编码</view>
+        <view>
+          <input value='{{user_mail}}' bindinput='user_mail'></input>
+        </view>
+    </view>
+  
+ 
+</view>
+  <view class='btn'>
+        <button type='warn' bindtap='save'>保存</button>
+        <button type='primary' bindtap='removeAddress' data-name="{{addressList.user_name}}">删除该地址</button>
+        <button type='default' bindtap='cancle'>取消</button>
+    </view>

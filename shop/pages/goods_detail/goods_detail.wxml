@@ -1,0 +1,116 @@
+<view>
+<!-- 轮播图 -->
+  <swiper style='height:640rpx' circular="false" autoplay="{{autoplay}}" interval="{{interval}}" indicator-color="{{indicatorColor}}"indicator-dots="{{indicatorDots}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}">
+      <block wx:for="{{detail_msg}}" wx:key="index">
+        <swiper-item wx:for="{{item.imgSrc}}" wx:key="clothesId">
+          <image src="{{item}}" class="slide-image" data-src="{{item}}" data-index="{{index}}" bindtap='preview'/>
+        </swiper-item>
+      </block>
+    </swiper>
+<!-- 价格区 -->
+    <view class='details-msg'>
+        <block wx:for="{{detail_msg}}" wx:key="index">
+              <view style='margin:10rpx auto'>{{item.title}}</view>
+        </block>
+        <view style='display:flex;justify-content:space-between;padding:0 40rpx 0 0rpx' wx:for="{{detail_msg}}" wx:key="index">
+            <view  class='details_pinfo'>
+              ￥{{item.price}}
+            </view>
+            <view class='details_old'>
+              {{item.oldPrice}}
+            </view>
+            <view class='details_sales'>
+              已售{{item.sales}}件
+              </view>
+        </view>
+    </view>
+    <!-- 选择尺码 -->
+    <view class='select_size'>
+        <view wx:for="{{detail_msg}}" wx:key="index" bindtap="onChangeShowState">
+          选择尺码
+        </view>
+        <!--遮罩层-->
+          <mask hidden="{{hidden1}}" style="z-index: 1;" hover-style="none"/>   
+        <view id='size_chose' class="hide{{showView?'':'show'}}">
+          <view class='masks'>
+              <view class='top'>
+                  <view wx:for="{{detail_msg}}" wx:key="index">
+                    <image src='{{item.imgSrc[0]}}'></image>
+                    <view >{{item.title}}</view>
+                     <view style='color:#f00;margin-top:30rpx;'>￥{{item.price}}</view>
+                  
+                    <icon type='clear' bindtap="onChangeShowState"></icon>
+                    </view>
+              </view>
+              <scroll-view id='middle' scroll-y="true">
+              <!-- 里面的尺寸颜色啥的都是后台带过来的 -->
+              <view style='margin: 20rpx;box-sizing: border-box;'>选择尺码</view> 
+                <view class='sml' wx:for="{{detail_msg}}" wx:key="index">
+                    <block wx:for="{{item.size}}" wx:key="index">
+                        <view id="{{item.size}}" class="{{ sizeId === item.size ? 'size':''}}" bindtap='chose_size'>{{item.size}}</view>
+                    </block>
+                </view>
+                    <view style='margin: 20rpx;box-sizing: border-box;'>选择颜色</view>
+                <view class='color' wx:for="{{detail_msg}}" wx:key="index">
+                    <block wx:for="{{item.color}}" wx:key="index">
+                        <view id="{{item.color}}" class="{{ colorId === item.color ? 'colors':''}}" bindtap='chose_color'>
+                          {{item.color}}
+                        </view>
+                    </block>
+                </view>
+                <view class='nums' wx:for="{{detail_msg}}" wx:key="index">
+                    <view>数量</view>
+                    <view>库存:{{item.inventory}}件</view>
+                    <view class='operation'>
+                        <view class='subtract  {{disabled ? "grey":""}}' bindtap='reduce'>-</view>
+                        <input type="number" value='{{value}}' style='text-align:center' bindinput='listenInput'></input>
+                        <view class='add {{disableda ? "gray":""}}' bindtap='add'>+</view>
+                    </view>
+                </view> 
+              </scroll-view>
+              <view class='bottom'>
+                  <view bindtap='add_shopCart' class='add_shopCart'>加入购物车</view>
+                  <view bindtap='buy_Now' class='buy_Now'>立即购买</view>
+              </view>
+          </view>
+        
+        </view>
+    </view>
+    <view style='display:flex;flex-flow: row nowrap;width:100%;' class='tab' wx:for="{{detail_msg}}" wx:key="index">
+        <view bindtap='tab1' class='{{tab1?"tab1":""}}'>商品详情</view>
+        <view bindtap='tab2' class='{{tab2?"tab2":""}}'>商品评论({{item.evaluate.length}})</view>
+    </view>
+    
+    <!-- 评价 -->
+    <view class='evaluate {{pingjia?"show":"hide"}}' wx:for="{{detail_msg}}" wx:key="index">
+        <view class='userNums' wx:for="{{item.evaluate}}" wx:key="index">
+           <image class='header_img' src="{{item.userHeaderImg}}"></image>
+           <view style='float:left;line-height:90rpx;'>{{item.userName}}</view> 
+           <view style='float:right;margin-top:8%;'>{{item.time}}</view>
+           <view style='clear:both;text-indent:10rpx;line-height:50rpx;'>{{item.userValue}}</view>
+        </view>
+        <view style='height:160rpx'></view>
+    </view>
+   <!-- 详情 -->
+    <view class='{{xiangqing?"show":"hide"}}' wx:for="{{detail_msg}}" wx:key="index">
+        <image wx:for="{{item.detail_img}}" wx:key="index" src="{{item}}" style='width:100%' mode="widthFix" data-src='{{item}}' bindtap='previews'></image>
+    </view>
+    <!-- 购买收藏 -->
+    <view class='detail-bottom'>
+        <view bindtap='toHome'>
+          <image style='width:50rpx;height:50%;margin:6rpx 0 10rpx 0'src='../../images/home.png'></image>
+          <view class='text_home'>首页</view> 
+        </view>
+        <view bindtap='toService'>
+          <image style='width:48rpx;height:50%;margin:6rpx 0 10rpx 0'src='../../images/service.png'></image>
+          <view class='text_kf'>客服</view> 
+        </view>
+        <view bindtap='collect' wx:for="{{detail_msg}}" wx:key="index" id="{{item.clothesId}}">
+           <image wx:if='{{shouc}}' style='width:48rpx;height:50%;margin:6rpx 0 10rpx 0'src='../../images/select.png'></image>
+           <image wx:else='{{shouc}}' style='width:48rpx;height:50%;margin:6rpx 0 10rpx 0'src='../../images/selected.png'></image>
+            <view class='text_sc'>收藏</view> 
+        </view>
+        <view bindtap='shopCart' class='shopCart'>加入购物车</view>
+        <view bindtap='buyNow' class='buyNow'>立即购买</view>
+    </view>
+</view>

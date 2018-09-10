@@ -1,0 +1,223 @@
+page{
+  font-size: 28rpx;
+  background: #e6e6e6;
+  border-top:1rpx solid #e6e6e6 
+}
+.nothing {
+  width: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  margin: 10% auto;
+  color: #8a8a8a;
+}
+.address>view:nth-of-type(1){
+  float: left;
+    width: 80%;
+  overflow: hidden;
+  text-indent: 1em;
+}
+.address>view:nth-of-type(2){
+  
+  float: right
+}
+
+.address>view>image{
+  width:40rpx;
+  height:40rpx;
+  margin:90% auto;
+
+}
+.address_name{
+  overflow: hidden;
+  line-height: 60rpx;
+}
+.address_detail{
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #ccc;
+  overflow: hidden
+}
+
+
+.xianshi{
+  display: none;
+}
+
+.nothing>image {
+  width: 260rpx;
+  height: 200rpx;
+  margin: 20rpx auto;
+}
+
+.goos_detail{
+  width: 100%;
+  border-bottom:1rpx solid #ccc;
+  background: white;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2% 0;
+  position: relative;
+}
+.goos_detail>icon{
+  position: absolute;
+  top:50%;
+  left: 0%;
+  transform: translateY(-50%)
+}
+.goods_img{
+  width: 20%;
+  margin: 0 5%;
+}
+.goos_detail>view:nth-of-type(1){
+  width: 40%;
+  font-size: 24rpx;
+  padding: 2% 0;
+}
+.goos_detail>view:nth-of-type(2){
+  width: 30%;
+  display: flex;
+  justify-content:center;
+   align-items:center; 
+}
+
+.goods_size{
+  float: left;
+
+}
+.goods_price{
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #f30;
+}
+ .reduce{
+  width: 50rpx;
+  height: 1.4rem;
+  border: 1rpx solid #ccc;
+  text-align: center;
+  line-height: 1.4rem;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+} 
+.goos_detail input{
+  display: block;
+  width: 30%;
+ text-align: center;
+  border-top: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc; 
+}
+ .add{
+  width: 50rpx;
+  height: 1.4rem;
+  border: 1rpx solid #ccc;
+  text-align: center;
+  line-height: 1.4rem;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+} 
+.setAddress{
+  width: 100%;
+  height: 150rpx; 
+  padding:2% 3%;
+  background: #fff;
+  margin-bottom: 2%;
+  box-sizing: border-box;
+  position: relative;
+}
+.right_icon{
+  position: absolute;
+  top:50%;
+  right:2%;
+  transform: translateY(-50%)
+}
+.distribution{
+  width: 100%;
+  height: 100rpx; 
+  padding:2% 3%;
+  background: #fff;
+  margin: 2% auto 0% auto;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #cfcfcf
+}
+.BuyerMessage{
+    width: 100%;
+  height: 100rpx; 
+  padding:2% 1% 2% 3%;
+  background: #fff;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.BuyerMessage>view{
+  flex: 6.5
+}
+.BuyerMessage>input{
+    flex: 3;
+    height: 100%;
+    line-height: 40rpx;
+    text-align-last: right;
+    color: #ccc;
+    text-align: right;
+    margin-right: 10rpx;
+    z-index: 1;
+}
+.integral{
+      width: 100%;
+  height: 100rpx; 
+  padding:2% 3%;
+  margin: 2% auto;
+  background: #fff;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  /* display: flex;
+  flex-flow: row nowrap */
+}
+.integral>view:nth-of-type(1){
+  width:20%;
+  float: left;
+}
+.integral>view:nth-of-type(2){
+  width:20%;
+  float: left;
+}
+.integral>input{
+  width: 20%;
+  margin-left: 50%;
+  line-height: 1.4rem;
+}
+.discount{
+  width: 100%;
+  height: 100rpx;
+  padding: 2% 3%;
+  box-sizing: border-box;
+  background: white;
+ line-height: 80rpx;
+}
+.money{
+  width: 100%;
+  height: 100rpx;
+  margin: 4% auto;
+  padding: 0% 3%;
+  box-sizing: border-box;
+  background: white;
+  line-height: 100rpx;
+}
+
+
+.pay{
+  width: 90%;
+  margin: 0 auto;
+}
+.wx_pay{
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #bd1903;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+}

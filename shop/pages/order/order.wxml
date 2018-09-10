@@ -1,0 +1,66 @@
+<!-- 地址 -->
+<view class='setAddress' bindtap='add_address'>
+     <view style='float:left;line-height: 120rpx;' wx:if="{{setAdd}}">设置收货地址</view><view class='right_icon' wx:if="{{setAdd}}"> > </view>  
+    <view class='address' wx:for="{{addlist}}" wx:key="index" wx:if="{{setAdds}}">
+        <view>
+            <view class='address_name'>
+                <text>{{item.user_name}}</text>
+                <text style='margin-left:20rpx'>{{item.user_phone}}</text>
+            </view>
+            <view class='address_detail'>
+                {{item.user_district}}
+            </view>
+        </view>
+        <view>
+             <image src='../../images/edit_address.png'></image>
+        </view>
+    </view>
+</view>
+<view>
+   <view wx:for="{{goodsList}}" wx:key="index" class='goos_detail'>
+
+          <image mode="widthFix" class='goods_img' src="{{item.imgSrc}}"></image>
+          <view>
+                <view class='goods_title'>{{item.title}}</view>
+                <view class='goods_size'>["{{item.size}}码"]</view>
+                <view class='goods_color'>["{{item.color}}"]</view>
+                <view class="goods_price">￥{{item.price}}</view>
+          </view>
+          
+          <view>
+            <!-- <view class='reduce {{disabled ? "grey":""}}' bindtap='reduce'>-</view>
+            <input type='number' value='{{value}}' class='goods_Nums' bindinput='listenInput'></input> 
+            <view class='add {{disableda ? "gray":""}}' bindtap='add'>+</view> -->
+          <view class='reduce {{disabled ? "grey":""}}' bindtap="minusCount" data-index="{{index}}">-</view>
+          <input type='number' value='{{item.goodsNums}}' class='goods_Nums' bindinput='listenInput' data-index="{{index}}"></input> 
+          <view class='add {{disableda ? "gray":""}}' bindtap="addCount" data-index="{{index}}" >+</view>
+          </view>
+     </view>
+</view>
+<view class="distribution">
+    <view style='float:left'>配送方式</view>
+    <view style='float:right;color:#cdcdcd'>{{distribution}}</view>
+</view>
+<view class='BuyerMessage'>
+  <view>备注</view>
+  <input placeholder='如需备注请输入'></input>
+</view>
+<view class='integral'>
+    <view>积分共{{integral}}</view>  
+    <view>可用 {{integraled}}</view> 
+    <!-- <input value='{{integraling}}' type='number'></input>  -->
+    <view style='float:right'>{{integraling}}</view>
+</view>
+<view class='discount'>
+    <view style='float:left'>优惠券</view>
+    <view style='float:right'>{{discount}}张</view>
+</view>
+<view class='money'>
+    <view style='float:left;'>商品金额</view> 
+    <view style='float:right;display:flex;flex-flow:row nowrap;height:100%;'>
+      <view style='color:#f30' >商品金额 :￥{{totalPrice}}</view>
+      <view style='color:#f30' >实付金额￥{{totalPrice}}</view>
+    </view>
+</view>
+<view style='width:100%;height:140rpx;'></view>
+<view class='wx_pay' bindtap='wx_pay' >微信支付</view>
