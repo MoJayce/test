@@ -1,16 +1,16 @@
-git config --global user.name "邱腾" 
-git config --global user.email "602908810@qq.com"
+git config --global user.name "admin" 
+git config --global user.email "xxxxxxx@qq.com"
 
 
-ssh-keygen -t rsa -C "602908810@qq.com"
+ssh-keygen -t rsa -C "xxxxxxx@qq.com"
 
 
---获取
+--鎷夊彇
 git pull origin master
 
 
 
---A新增
+--鏇存柊
 
 git add .
 
