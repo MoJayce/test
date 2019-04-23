@@ -149,21 +149,6 @@ Page({
     console.log("e")
   },
   aaa:function(){
-    var that =this
-    wx.request({
-      url: 'http://10.0.180.26/webServices/FeiShop/Products.svc/GetGoodList',
-      data:{
-        wid: "53",
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        that.setData({
-          ceshi:res.data.d
-        })
-        console.log(that.data.ceshi)
-      }
-    })
+    console.log("aaaa")
   }
 })

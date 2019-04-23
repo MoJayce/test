@@ -136,26 +136,9 @@ Page({
     that.setData({
       tab_right: tab_right,
     });
-    // tab列表
-    // wx.request({
-    //   url: 'http://10.0.180.26/webServices/FeiShop/get_category.svc/GetCateBywid',
-    //   data: {
-    //     wid: "53",
-    //   },
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success: function (res) {
-    //     that.setData({
-    //       tab_left: res.data.d,
-    //       tab_right:res.data.d
-    //     })
-    //     console.log(that.data.tab_left)
-    //   }
-    // })
+    
   // 商品列表
   wx.request({
-    // url: 'https://www.apiopen.top/satinApi',
     url:"https://www.apiopen.top/weatherApi",
     method:"GET",
     data: {
